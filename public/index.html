@@ -11,14 +11,16 @@
         #messages { list-style-type: none; margin: 0; padding: 0; }
         #messages li { padding: 5px 10px; }
         #messages li:nth-child(odd) { background: #eee; }
+        #btn_login { width: 12%; background: rgb(130, 224, 255); border: none; padding: 15px; min-width:100px}
+        #login {width:50%; margin:auto; }
     </style>
 </head>
 <body>
 <main>
     <div id="login">
         <label>Entre com seu nome:</label><input type="text" id="txt_name">
-        <button id="btn_login">Logar</button>
         <label id="lbl_incorreto">Usuario incorreto!!!!</label><br>
+        <br><button id="btn_login">Logar</button>
     </div>
     <div id="message_div">
         <ul id="messages"></ul>

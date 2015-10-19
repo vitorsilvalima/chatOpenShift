@@ -1,11 +1,6 @@
 var express = require('express');
 var app = express();
 
-/*app.get('/', function (req, res)
-{
-  res.sendFile(__dirname + '/publicindex.html');
-});*/
-
 app.use(express.static('public'));
 var server = app.listen(process.env.OPENSHIFT_NODEJS_PORT, process.env.OPENSHIFT_NODEJS_IP, function () {
   var host = server.address().address;
@@ -14,8 +9,6 @@ var server = app.listen(process.env.OPENSHIFT_NODEJS_PORT, process.env.OPENSHIFT
 });
 var io = require('socket.io')(server);
 var numeroM=0;
-
-
 
 io.on('connection', function(socket)
 {
