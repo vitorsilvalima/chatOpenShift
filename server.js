@@ -8,16 +8,16 @@ var server = app.listen(process.env.OPENSHIFT_NODEJS_PORT, process.env.OPENSHIFT
   console.log('Example app listening at http://%s:%s', host, port);
 });
 var io = require('socket.io')(server);
-var numeroM=0;
+var nUsers=0;
 
 io.on('connection', function(socket)
 {
   socket.on("login",function(name)
                      {
                         socket.name=name;
-                        numeroM++;
+                        nUsers++;
                         console.log('The user: ' + name+" is now logged!");
-                        console.log(numeroM+" usuarios logados!");
+                        console.log(nUsers+" usuarios logados!");
                         io.emit('chat message', name+" logado!");
                      });
 
@@ -28,9 +28,9 @@ io.on('connection', function(socket)
   });
   socket.on('disconnect', function ()
   {
-      if(numeroM>0)
+      if(nUsers>0)
       {
-        numeroM--;
+        nUsers--;
       }
        console.log(socket.name+': '+' se desconectou!');
        io.emit('chat message',socket.name+': '+' se desconectou!');

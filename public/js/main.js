@@ -17,8 +17,6 @@ $("#btn_login").click(function()
         $("#lbl_incorreto").show();
     }
 });
-
-
 $('form').submit(function(){
     socket.emit('chat message', $('#m').val());
 $('#m').val('');
