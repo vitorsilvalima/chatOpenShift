@@ -1,5 +1,5 @@
  // var socket = io();
-var socket = io.connect('http://chatbeta-vapp1.rhcloud.com/');
+var socket = io.connect('http://chatbeta-vapp1.rhcloud.com/'); //change here with your OpenShift project url
 var name="";
 $("#lbl_incorreto").hide();
 $("#message_div").hide();
